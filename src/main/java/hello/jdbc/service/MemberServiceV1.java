@@ -12,7 +12,7 @@ public class MemberServiceV1 {
     private final MemberRepositoryV1 memberRepository;
 
     //계좌이체 로직
-    public void accountTrasferr(String fromId, String toId, int money) throws
+    public void accountTransfer(String fromId, String toId, int money) throws
             SQLException {
         Member fromMember = memberRepository.findById(fromId);  //회원 꺼내고
         Member toMember = memberRepository.findById(toId);  //누구에게 보낼지
