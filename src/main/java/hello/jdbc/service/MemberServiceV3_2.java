@@ -26,6 +26,8 @@ public class MemberServiceV3_2 {
         this.memberRepository = memberRepository;
     }
 
+
+
     //계좌이체 로직
     public void accountTransfer(String fromId, String toId, int money) throws SQLException {
         txTemplate.executeWithoutResult((status)->{
