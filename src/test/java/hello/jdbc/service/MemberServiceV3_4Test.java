@@ -40,14 +40,14 @@ class MemberServiceV3_4Test {
     private MemberServiceV3_3 memberService;
 
     @TestConfiguration
-    static class TestCOnfig{
+    static class TestConfig{
         private final DataSource dataSource;
-        public TestCOnfig(DataSource dataSource){
+        public TestConfig(DataSource dataSource){
             this.dataSource = dataSource;
         }
          @Bean
         MemberRepositoryV3 memberRepositoryV3(){
-            return new MemberRepositoryV3(dataSource());
+            return new MemberRepositoryV3(dataSource);
         }
         @Bean
         MemberServiceV3_3 memberServiceV3_3(){
