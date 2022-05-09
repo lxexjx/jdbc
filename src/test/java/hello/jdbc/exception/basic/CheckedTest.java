@@ -50,17 +50,17 @@ public class CheckedTest {
                 log.info("예외 처리, message={}", e.getMessage(), e);
             }
         }
-
+        /**
+         * 체크 예외를 밖으로 던지는 코드
+         * 체크 예외는 예외를 잡지 않고 밖으로 던지려면 throws 예외를 메서드에 필수로
+         선언해야한다.
+         */
         public void callThrow() throws MyCheckedException {
             repository.call();
         }
     }
 
-    /**
-     * 체크 예외를 밖으로 던지는 코드
-     * 체크 예외는 예외를 잡지 않고 밖으로 던지려면 throws 예외를 메서드에 필수로
-     선언해야한다.
-     */
+
     static class Repository{
         public void call() throws MyCheckedException {  //체크 예외는 던지는거 선언 필수
             throw new MyCheckedException("ex");
